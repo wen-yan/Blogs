@@ -2,4 +2,4 @@
 
 This is the home page.
 
-[Git]({{ site.github.rul }}/git)
+[Git]({{ site.github.url }}/git)
