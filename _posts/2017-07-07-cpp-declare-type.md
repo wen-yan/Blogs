@@ -1,5 +1,4 @@
 ---
-layout: post
 ---
 
 ### C++ some special types
