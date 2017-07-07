@@ -10,6 +10,7 @@
   {% for post in site.posts %}
     <li>
       <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>
