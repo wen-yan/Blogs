@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/lib/bootswatch-superhero/bootstrap.min.css" />
-	<link rel="stylesheet" href="../assets/css/style.scss" />
+	<link rel="stylesheet" href="{{ site.github.url }}/assets/lib/bootswatch-superhero/bootstrap.min.css" />
+	<link rel="stylesheet" href="{{ site.github.url }}/assets/css/style.scss" />
 </head>
 <body>
 	<!--<div class="navbar navbar-default navbar-fixed-top">
@@ -21,55 +21,55 @@
 			</div>
 			<div class="sidebar-column col-lg-3 col-lg-offset-1">
 				<div>
-{% comment %}
-=======================
-The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
-=======================
-{% endcomment %}
-{% assign rawtags = "" %}
-{% for post in site.posts %}
-	{% assign ttags = post.tags | join:'|' | append:'|' %}
-	{% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
-{% assign rawtags = rawtags | split:'|' | sort %}
+					{% comment %}
+					=======================
+					The following part extracts all the categories from your posts and sort categories, so that you do not need to manually collect your categories to a place.
+					=======================
+					{% endcomment %}
+					{% assign rawcategories = "" %}
+					{% for post in site.posts %}
+					{% assign tcategories = post.categories | join:'|' | append:'|' %}
+					{% assign rawcategories = rawcategories | append:tcategories %}
+					{% endfor %}
+					{% assign rawcategories = rawcategories | split:'|' | sort %}
 
-{% comment %}
-=======================
-The following part removes dulpicated tags and invalid tags like blank tag.
-=======================
-{% endcomment %}
-{% assign tags = "" %}
-{% for tag in rawtags %}
-	{% if tag != "" %}
-		{% if tags == "" %}
-			{% assign tags = tag | split:'|' %}
-		{% endif %}
-		{% unless tags contains tag %}
-			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
-		{% endunless %}
-	{% endif %}
-{% endfor %}
-{% comment %}
-=======================
-The purpose of this snippet is to list all the tags you have in your site.
-=======================
-{% endcomment %}
-{% for tag in tags %}
-					<a href="#{{ tag | slugify }}"> {{ tag }} </a>
-{% endfor %}
+					{% comment %}
+					=======================
+					The following part removes dulpicated categories and invalid categories like blank category.
+					=======================
+					{% endcomment %}
+					{% assign categories = "" %}
+					{% for category in rawcategories %}
+					{% if category != "" %}
+					{% if categories == "" %}
+					{% assign categories = category | split:'|' %}
+					{% endif %}
+					{% unless categories contains category %}
+					{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
+					{% endunless %}
+					{% endif %}
+					{% endfor %}
+					{% comment %}
+					=======================
+					The purpose of this snippet is to list all the categories you have in your site.
+					=======================
+					{% endcomment %}
+					{% for category in categories %}
+					<a href="#{{ category | slugif> {{ category }}"/>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<footer>
+		<hr />
 		<div class="container">
-			<hr />
 			this is footer xxxxxxxxxxxxx
 		</div>
 	</footer>
 
-	<script src="../assets/lib/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{ site.github.url }}/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{ site.github.url }}/assets/lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
