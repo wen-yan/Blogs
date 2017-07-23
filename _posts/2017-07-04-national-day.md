@@ -1,7 +1,7 @@
 ---
 title: national day
 excerpt: national day is July 4
-categories: misc
+category: misc
 ---
 
 {% include common.md %}
