@@ -1,12 +1,21 @@
----
----
 
-@import {{ site.theme }}
-
-.wrapper {
-    max-width: 900px;
+body {
 }
 
-.wrapper section {
-    max-width: 900px;
+.main-container {
+    
+}
+
+.content-column {
+    background-color: red;
+}
+
+.sidebar-column {
+    background-color: green;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
