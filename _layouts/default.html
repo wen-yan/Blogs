@@ -23,39 +23,39 @@
 				<div>
 {% comment %}
 =======================
-The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
+The following part extracts all the categories from your posts and sort categories, so that you do not need to manually collect your categories to a place.
 =======================
 {% endcomment %}
-{% assign rawtags = "" %}
+{% assign rawcategories = "" %}
 {% for post in site.posts %}
-	{% assign ttags = post.tags | join:'|' | append:'|' %}
-	{% assign rawtags = rawtags | append:ttags %}
+	{% assign tcategories = post.categories | join:'|' | append:'|' %}
+	{% assign rawcategories = rawcategories | append:tcategories %}
 {% endfor %}
-{% assign rawtags = rawtags | split:'|' | sort %}
+{% assign rawcategories = rawcategories | split:'|' | sort %}
 
 {% comment %}
 =======================
-The following part removes dulpicated tags and invalid tags like blank tag.
+The following part removes dulpicated categories and invalid categories like blank category.
 =======================
 {% endcomment %}
-{% assign tags = "" %}
-{% for tag in rawtags %}
-	{% if tag != "" %}
-		{% if tags == "" %}
-			{% assign tags = tag | split:'|' %}
+{% assign categories = "" %}
+{% for category in rawcategories %}
+	{% if category != "" %}
+		{% if categories == "" %}
+			{% assign categories = category | split:'|' %}
 		{% endif %}
-		{% unless tags contains tag %}
-			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% unless categories contains category %}
+			{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
 		{% endunless %}
 	{% endif %}
 {% endfor %}
 {% comment %}
 =======================
-The purpose of this snippet is to list all the tags you have in your site.
+The purpose of this snippet is to list all the categories you have in your site.
 =======================
 {% endcomment %}
-{% for tag in tags %}
-					<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+{% for category in categories %}
+					<a href="#{{ category | slugify }}"> {{ category }} </a>
 {% endfor %}
 				</div>
 			</div>

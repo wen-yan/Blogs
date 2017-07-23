@@ -1,5 +1,5 @@
 ---
-category: c++
+categories: c++
 ---
 
 ### C++ some special types
