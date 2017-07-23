@@ -28,8 +28,8 @@
 					{% endcomment %}
 					{% assign rawcategories = "" %}
 					{% for post in site.posts %}
-					{% assign tcategories = post.categories | join:'|' | append:'|' %}
-					{% assign rawcategories = rawcategories | append:tcategories %}
+						{% assign tcategories = post.categories | join:'|' | append:'|' %}
+						{% assign rawcategories = rawcategories | append:tcategories %}
 					{% endfor %}
 					{% assign rawcategories = rawcategories | split:'|' | sort %}
 
@@ -40,14 +40,14 @@
 					{% endcomment %}
 					{% assign categories = "" %}
 					{% for category in rawcategories %}
-					{% if category != "" %}
-					{% if categories == "" %}
-					{% assign categories = category | split:'|' %}
-					{% endif %}
-					{% unless categories contains category %}
-					{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
-					{% endunless %}
-					{% endif %}
+						{% if category != "" %}
+							{% if categories == "" %}
+								{% assign categories = category | split:'|' %}
+							{% endif %}
+							{% unless categories contains category %}
+								{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
+							{% endunless %}
+						{% endif %}
 					{% endfor %}
 					{% comment %}
 					=======================
@@ -55,7 +55,7 @@
 					=======================
 					{% endcomment %}
 					{% for category in categories %}
-					<a href="#{{ category | slugif> {{ category }}"/>
+						<a href="#{{ category | slugif> {{ category }}"/>
 					{% endfor %}
 				</div>
 			</div>
