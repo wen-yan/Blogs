@@ -55,7 +55,7 @@
 					=======================
 					{% endcomment %}
 					{% for category in categories %}
-						<a href="{{ site.github.url }}/_utilities/category-{{ category | slugify }}"> {{ category }} </a>
+						<a href="{{ site.github.url }}/utilities/category-{{ category | slugify: 'pretty' }}"> {{ category }} </a>
 					{% endfor %}
 				</div>
 			</div>
