@@ -1,6 +1,11 @@
+theme: jekyll-theme-hacker
 title: Wen' blogs
 description: Blogs site of Wen
 show_downloads: false
 future: true
 gems:
   - jekyll-sitemap
+extensions: [fenced_code_blocks]
+markdown: kramdown
+highlighter: rouge
+
