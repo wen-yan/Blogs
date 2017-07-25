@@ -5,4 +5,6 @@ future: true
 gems:
   - jekyll-sitemap
 extensions: [fenced_code_blocks]
+markdown: kramdown
+highlighter: rouge
 
