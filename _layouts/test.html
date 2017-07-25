@@ -4,73 +4,73 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="{{ site.github.url }}/assets/lib/bootswatch-superhero/bootstrap.min.css" />
-	<link rel="stylesheet" href="{{ site.github.url }}/assets/css/style.scss" />
-	<link rel="icon" type="image/png" href="{{ site.github.url }}/assets/images/favicon.png"/>
+	<link rel="stylesheet" href="../assets/lib/bootswatch-superhero/bootstrap.min.css" />
+	<link rel="stylesheet" href="../assets/css/style.scss" />
+	<link rel="icon" type="image/png" href="../assets/images/favicon.png" />
 </head>
 <body>
 	<!--<div class="navbar navbar-default navbar-fixed-top">
 	</div>-->
-	<div class="container">
-		<h1>Welcome</h1>
-	</div>
-	<hr />
-	<div class="container main-container">
-		<div class="row">
-			<div class="content-column col-lg-8 col-md-3 col-sm-4 ">
-				{{ content }}
-			</div>
-			<div class="sidebar-column col-lg-3 col-lg-offset-1">
-				<div>
-					{% comment %}
-					=======================
-					The following part extracts all the categories from your posts and sort categories, so that you do not need to manually collect your categories to a place.
-					=======================
-					{% endcomment %}
-					{% assign rawcategories = "" %}
-					{% for post in site.posts %}
-						{% assign tcategories = post.categories | join:'|' | append:'|' %}
-						{% assign rawcategories = rawcategories | append:tcategories %}
-					{% endfor %}
-					{% assign rawcategories = rawcategories | split:'|' | sort %}
-
-					{% comment %}
-					=======================
-					The following part removes dulpicated categories and invalid categories like blank category.
-					=======================
-					{% endcomment %}
-					{% assign categories = "" %}
-					{% for category in rawcategories %}
-						{% if category != "" %}
-							{% if categories == "" %}
-								{% assign categories = category | split:'|' %}
-							{% endif %}
-							{% unless categories contains category %}
-								{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
-							{% endunless %}
-						{% endif %}
-					{% endfor %}
-					{% comment %}
-					=======================
-					The purpose of this snippet is to list all the categories you have in your site.
-					=======================
-					{% endcomment %}
-					{% for category in categories %}
-						<a href="{{ site.github.url }}/utilities/category-{{ category | slugify: 'pretty' }}"> {{ category }} </a>
-					{% endfor %}
+	<div class="page-container">
+		<div class="container">
+			<h1>Welcome</h1>
+		</div>
+		<hr />
+		<div class="container main-container">
+			<div class="row">
+				<div class="content-column col-lg-8 col-md-3 col-sm-4 ">
+					<p>
+						The page build failed for the `master` branch with the following error:
+						Your SCSS file `assets/css/style.scss` has an error on line 1:
+						Invalid CSS after "@import ": expected file to import (string or url()),
+						was "jekyll-theme-mi...". For more information, see
+						https://help.github.com/articles/page-build-failed-invalid-sass-or-scss/.
+						For information on troubleshooting Jekyll see:
+						https://help.github.com/articles/troubleshooting-jekyll-builds
+						If you have any questions you can contact us by replying to this email.
+					</p>
+					<p>
+						The page build failed for the `master` branch with the following error:
+						Your SCSS file `assets/css/style.scss` has an error on line 1:
+						Invalid CSS after "@import ": expected file to import (string or url()),
+						was "jekyll-theme-mi...". For more information, see
+						https://help.github.com/articles/page-build-failed-invalid-sass-or-scss/.
+						For information on troubleshooting Jekyll see:
+						https://help.github.com/articles/troubleshooting-jekyll-builds
+						If you have any questions you can contact us by replying to this email.
+					</p>
+				</div>
+				<div class="sidebar-column col-lg-3 col-lg-offset-1">
+					<h5>CATEGORIES</h5>
+					<ul>
+						<li class="sidebar-cat-item">
+							<a href="#">Misc</a>
+						</li>
+						<li class="sidebar-cat-item">
+							<a href="#">C++</a>
+						</li>
+						<li class="sidebar-cat-item">
+							<a href="#">C#</a>
+						</li>
+					</ul>
+					<h5>TAGS</h5>
+					<ul>
+						<li class="sidebar-cat-item">
+							<a href="#">Misc</a>
+						</li>
+						<li class="sidebar-cat-item">
+							<a href="#">C++</a>
+						</li>
+						<li class="sidebar-cat-item">
+							<a href="#">C#</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<footer>
-		<hr />
-		<div class="container">
-			this is footer xxxxxxxxxxxxx
-		</div>
-	</footer>
-
-	<script src="{{ site.github.url }}/assets/lib/jquery/jquery-3.2.1.min.js"></script>
-	<script src="{{ site.github.url }}/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
