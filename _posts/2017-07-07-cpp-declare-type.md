@@ -39,4 +39,4 @@ int (*pf())[3];
 // function pointer array
 int (*(pfa[2])())[3];
 ```
-> **If possible, do not use it. Instead using typedef/using to define types.**
+> If possible, do not use it. Instead using typedef/using to define types.
