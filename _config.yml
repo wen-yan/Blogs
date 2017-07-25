@@ -4,6 +4,5 @@ show_downloads: false
 future: true
 gems:
   - jekyll-sitemap
-markdown: redcarpet
 extensions: [fenced_code_blocks]
 
