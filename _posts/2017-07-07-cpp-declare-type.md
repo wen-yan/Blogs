@@ -1,9 +1,12 @@
 ---
+title: Some special type declarations of C++
+excerpt: Some C++ type decalrations are not frequently used.
 category: C++
 ---
 
-### C++ some special types
-C++ has some special type declarations. Especially combine pointer, reference, array and function pointer. Sometimes it's hard to understand what it is. In following samples, `typeid(x).name()` is used to make it more clear, because it uses a more clear name which might be easily understood than  literal descriptions.
+C++ has some special type declarations. Especially combine pointer, reference, array and function pointer. Sometimes it's hard to understand what it is.
+
+In following samples, `typeid(x).name()` is used to make it more clear, because it uses a more clear name which might be easily understood than  literal descriptions.
 > Note : `typeid(x).name()` might return different names when using different compilers. My compiler is *g++ (GCC) 6.2.1 20160916 (Red Hat 6.2.1-3)*
 
 ##### array and pointer
