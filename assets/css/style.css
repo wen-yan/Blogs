@@ -119,10 +119,6 @@ section {
 	margin: 0 0 20px 0
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 20px
-}
-
 li {
 	line-height: 1.4
 }
@@ -232,10 +228,24 @@ ul li {
 blockquote {
 	color: #aaa;
 	padding-left: 10px;
-	border-left: 1px dotted #666
+	font-size: 16px;
+	border-left-color: #0c7d9d;
+	background-color: #202020;
 }
 
-pre, code {
+code {
+	background: rgba(0,0,0,0.9);
+	border: 1px solid rgba(255,255,255,0.15);
+	padding: 3px;
+	font-size: 16px;
+	color: #b5e853;
+	border-radius: 2px;
+	text-wrap: normal;
+	overflow: auto;
+	overflow-y: hidden
+}
+
+pre {
 	background: rgba(0,0,0,0.9);
 	border: 1px solid rgba(255,255,255,0.15);
 	padding: 10px;
@@ -245,6 +255,10 @@ pre, code {
 	text-wrap: normal;
 	overflow: auto;
 	overflow-y: hidden
+}
+
+pre code {
+	border-style: none;
 }
 
 table {

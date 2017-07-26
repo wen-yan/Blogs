@@ -55,9 +55,11 @@
 					The purpose of this snippet is to list all the categories you have in your site.
 					=======================
 					{% endcomment %}
+					<ul>
 					{% for category in categories %}
-						<a href="{{ site.github.url }}/utilities/category-{{ category | slugify: 'pretty' }}"> {{ category }} </a>
+						<li><a href="{{ site.github.url }}/utilities/category-{{ category | slugify: 'pretty' }}"> {{ category }} </a></li>
 					{% endfor %}
+					<ul>
 				</div>
 			</div>
 		</div>
