@@ -66,7 +66,7 @@ int (*(pfa[2])())[3] = { &b, &b };
 ```
 > Note : if possible, do not use so complex declarations. Instead using typedef/using to define types.
 
-```
+```c++
 using array_pointer = int (*)[3];
 using func_array_pointer = array_pointer (*)();
 func_array_pointer pf = &b;
