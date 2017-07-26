@@ -1,42 +1,74 @@
 ---
-category: c++
+category: C++
 ---
 
 ### C++ some special types
+C++ has some special type declarations. Especially combine pointer, reference, array and function pointer. Sometimes it's hard to understand what it is. In following samples, `typeid(x).name()` is used to make it more clear, because it uses a more clear name which might be easily understood than  literal descriptions.
+> Note : `typeid(x).name()` might return different names when using different compilers. My compiler is *g++ (GCC) 6.2.1 20160916 (Red Hat 6.2.1-3)*
 
-##### Pointer of array
+##### array and pointer
 ```c++
-// p is a pointer to int array
-// with 3 elements
-int (*p)[3];
-// equals to
-using type = int(*)[3];
-type p;
+// a is a 3 elements array
+// typeid(a) = A3_i
+int a[3];
 
-// p is a pointer array with
-// 2 elements point to an int array
-// with 3 elements
-int (*p[2])[3];
-// equals to
-type p[2];
+// b is a 3 elements (pointer) array
+// typeid(b) = A3_Pi
+int* b[3] = { &a[0], &a[1], &a[2] };
+
+// c is a pointer to 3 elements array
+// typeid(c) = PA3_i
+int (*c)[3] = &a;
+
+// d is an array has 2 pointer elements which points to a 3 elements array
+// typeid(d) = A2_PA3_i
+int (*d[2])[3] = { &a, &a };
 ```
-##### Function returns pointer to array
+
+##### array and reference
+Reference is similar to pointer except what `typeid(x).name()` returns.
 ```c++
-// function f returns pointer to
-// int array with 3 elements
-int (*f())[3]
-{
-}
+// a is a 3 elements array
+// typeid(a) = A3_i
+int a[3];
 
-// using auto
-auto f() -> int(*)[3]
-{
-}
-
-// function pointer
-int (*pf())[3];
-
-// function pointer array
-int (*(pfa[2])())[3];
+// b is a reference to a 3 elements array
+// typeid(b) = A3_i,  same as a
+int (&b)[3] = a;
 ```
-> If possible, do not use it. Instead using typedef/using to define types.
+> Note : reference array is illegal. So there is no sample for `int& b[3]` and `int (&b[2])[3]`.
+
+##### array and function
+```c++
+// a is a 3 elements array
+// typeid(a) = A3_i
+int a[3];
+
+// function b returns pointer to a 3 elements array
+// typeid(b) = FPA3_ivE
+int (*b())[3] { return &a; }
+// or auto style
+auto b() -> int (*)[3] { return &a; }
+
+// function c returns reference to a 3 elements array
+// typeid(c) = FPA3_ivE
+int (&c())[3] { return a; }
+// or auto style
+auto c() -> int (&)[3] { return a; }
+
+// pf is a pointer of function which returns pointer to a 3 elements array
+// typeid(pf) = PFPA3_ivE
+int (*(*pf)())[3] = &b;
+
+// pfa is a 2 elements array whose elements are pointers of function which returns pointer to a 3 elements array
+// typeid(pfa) = A2_PFPA3_ivE
+int (*(pfa[2])())[3] = { &b, &b };
+```
+> Note : if possible, do not use so complex declarations. Instead using typedef/using to define types.
+
+```
+using array_pointer = int (*)[3];
+using func_array_pointer = array_pointer (*)();
+func_array_pointer pf = &b;
+func_array_pointer pfa[2] = { &b, &b };
+```
