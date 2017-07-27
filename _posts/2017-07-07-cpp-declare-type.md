@@ -65,7 +65,7 @@ int (*(*pf)())[3] = &b;
 
 // pfa is a 2 elements array whose elements are pointers of function which returns pointer to a 3 elements array
 // typeid(pfa) = A2_PFPA3_ivE
-int (*(pfa[2])())[3] = { &b, &b };
+int (*(*pfa[2])())[3] = { &b, &b };
 ```
 > Note : if possible, do not use so complex declarations. Instead using typedef/using to define types.
 
