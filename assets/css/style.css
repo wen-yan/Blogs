@@ -305,3 +305,16 @@ a {
 .cf {
 	zoom: 1
 }
+
+.blog-date {
+	color: #aaa;
+	font-size: 12px;
+}
+
+.blog-category {
+	margin-left: 10px;
+	padding: 3px;
+	background-color: #0c7d9d;
+	border-radius: 2px;
+	font-size: 12px;
+}

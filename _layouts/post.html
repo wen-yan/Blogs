@@ -12,7 +12,13 @@
 	<!--<div class="navbar navbar-default navbar-fixed-top">
 	</div>-->
 	<div class="container">
-		<h1>Welcome</h1>
+		<h3>{{ post.title }}</h3>
+		<div>
+			<span class="blog-date">{{ post.date }}</span>
+			{% for category in {{ post.categories }} %}
+				<span class="blog-category">{{ category }}</span>
+			{% endfor %}
+		</div>
 	</div>
 	<hr />
 	<div class="container main-container">
