@@ -14,7 +14,7 @@
 	<div class="container">
 		<h3>{{ page.title }}</h3>
 		<div>
-			<span class="blog-date">{{ page.date }}</span>
+			<span class="blog-date">{{ page.date | date_to_string }}</span>
 			{% for category in page.categories %}
 				<span class="blog-category">{{ category }}</span>
 			{% endfor %}
