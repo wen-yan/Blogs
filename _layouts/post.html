@@ -12,10 +12,10 @@
 	<!--<div class="navbar navbar-default navbar-fixed-top">
 	</div>-->
 	<div class="container">
-		<h3>{{ post.title }}</h3>
+		<h3>{{ page.title }}</h3>
 		<div>
-			<span class="blog-date">{{ post.date }}</span>
-			{% for category in {{ post.categories }} %}
+			<span class="blog-date">{{ page.date }}</span>
+			{% for category in {{ page.categories }} %}
 				<span class="blog-category">{{ category }}</span>
 			{% endfor %}
 		</div>
