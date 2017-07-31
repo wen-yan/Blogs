@@ -8,7 +8,7 @@ boost provides `pool_allocator` and `fast_pool_allocator`, but they depend on `s
 
 First we need to create `thread_local_pool_allocator` class, which is a normal allocator type, except it uses a thread local singleton pool.
 
-```C++
+```c++
 template<typename T, typename UserAllocator, unsigned NextSize, unsigned MaxSize>
 struct thread_local_pool_allocator
 {
@@ -62,7 +62,7 @@ struct thread_local_pool_allocator
 
 Next implement the pool `thread_local_singleton_pool`.
 
-```C++
+```c++
 template<unsigned RequestedSize, typename UserAllocator, unsigned NextSize, unsigned MaxSize>
 struct thread_local_singleton_pool
 {
@@ -84,7 +84,7 @@ struct thread_local_singleton_pool
 
 `UserAllocator` can be `default_user_allocator_new_delete`, `default_user_allocator_malloc_free` or allocator defined by yourself. Here is an example using `thread_local_pool_allocator`.
 
-```C++
+```c++
 using Key = std::int32_t;
 using Value = std::int64_t;
 using Pair = std::pair<const Key, Value>;
