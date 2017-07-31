@@ -318,3 +318,10 @@ a {
 	border-radius: 2px;
 	font-size: 12px;
 }
+.blog-tag {
+	margin-left: 10px;
+	padding: 3px;
+	background-color: #666;
+	border-radius: 2px;
+	font-size: 12px;
+}
