@@ -1,0 +1,37 @@
+digraph {
+	rankdir=LR;
+
+	// node common attributes
+	node [shape=circle, penwidth=2, color="#548235", fillcolor="#5B9BD5"]
+	// edge common attributes
+	edge [dir=back, penwidth=2.5, arrowsize=0.7, color="#548235"]
+
+	// commit
+	node [style="filled"]
+	c1a, c1b [label=c1]
+	c2
+	c2c3 [label="c2+c3"]
+
+	// staged
+	node [style="filled,dashed", color="#7F7F7F"]
+	c3
+
+	// branch
+	node [shape=rounded, style=filled, color="#305497", fillcolor="#305497", fontcolor=white]
+	mastera [label=master]
+	masterb [label=master]
+
+	// committed edge
+	edge []
+	c1a -> c2
+	c1b -> c2c3
+	// uncommitted edge
+	edge [color="#7F7F7F"]
+	c2 -> c3
+
+	// branch edge
+	edge [dir=nomal, color="#305497"]
+	mastera -> c2
+	masterb -> c2c3
+	{rank=same; c2, c2c3, mastera, masterb}
+}
