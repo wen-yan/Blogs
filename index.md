@@ -1,16 +1,6 @@
 ---
---- 
-# Blog Home
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-### This is the home page.
-
-[Git]({{ site.github.url }}/git)
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+layout: home
+---

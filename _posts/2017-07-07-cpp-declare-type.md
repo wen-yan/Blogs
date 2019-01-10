@@ -3,6 +3,7 @@ title: Some special type declarations of C++
 excerpt: Some C++ type decalrations are not frequently used.
 category: C++
 tags: C++
+layout: post
 ---
 
 C++ has some special type declarations. Especially combine pointer, reference, array and function pointer. Sometimes it's hard to understand what it is.

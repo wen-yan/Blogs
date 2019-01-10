@@ -2,6 +2,7 @@
 title: Thread local pool allocator
 category: C++
 tags: C++ std boost allocator pool thread_local
+layout: post
 ---
 
 boost provides `pool_allocator` and `fast_pool_allocator`, but they depend on `singleton_pool` which can only be thread safe or non thread safe. Sometimes we need a thread local pool, so we don't need to handle race condition to improve performance.
