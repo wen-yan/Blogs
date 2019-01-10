@@ -95,8 +95,21 @@ f2(someFunc);   // param => void (&)(int, double)
 ##### Item 2: Understand **auto** type deduction
 > * auto type deduction is usually the same as template type deduction, but auto type deduction assumes that a braced initializer represents a *std::initializer_list*, and template type deduction doesn't.
 > * auto in a function return type or a lambda parameter implies template type deduction not auto type deduction.
+
 ```c++
 // auto with braced initializer
 auto x = {27};  // x => std:initializer_list<int>, value is {27}
 auto x{27};     // x => std:initializer_list<int>, value is {27}
+
+// template can't deduce initializer_list
+template <typename T>
+void f(T param);
+
+f({11, 23, 9});     // error! can't deduce type for T
+
+// Need to use initializer_list directly
+template <typename T>
+void f(std::initializer_list<T> param);
+
+f({11, 23, 9});     // T => int
 ```
